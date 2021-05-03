@@ -435,4 +435,33 @@ SELECT Lid.Voornaam, tijd
 FROM UitslagIndividueel
 JOIN Lid ON UitslagIndividueel.LidID = Lid.LidID
 WHERE Lid.Geslacht = "Vrouw" 
-AND tijd = (SELECT MIN(tijd) FROM UitslagIndividueel JOIN Lid ON UitslagIndividueel.LidID = Lid.LidID WHERE Lid.Geslacht = "Vrouw")
+AND tijd = (SELECT MIN(tijd) FROM UitslagIndividueel JOIN Lid ON UitslagIndividueel.LidID = Lid.LidID WHERE Lid.Geslacht = "Vrouw");
+
+	    
+-- 12.7
+-- niet eigen oplossing: 	
+SELECT Lid.Voornaam, Leeftijdsklasse.NaamKlasse, DATEDIFF(CURRENT_DATE, Lid.Geboortedatum)/365.25 AS "Leeftijd"
+FROM Lid    
+JOIN Leeftijdsklasse ON DATEDIFF(CURRENT_DATE, Lid.Geboortedatum)/365.25 > (IFNULL(Leeftijdsklasse.MinimumLeeftijd, 0)) 
+AND DATEDIFF(CURRENT_DATE, Lid.Geboortedatum)/365.25 < (IFNULL(Leeftijdsklasse.MaximumLeeftijd, 200))
+ORDER BY Lid.LidID
+LIMIT 10;
+
+SELECT Lid.Voornaam, Leeftijdsklasse.NaamKlasse
+FROM Lid
+INNER JOIN Leeftijdsklasse ON 
+      TIMESTAMPDIFF(YEAR, Lid.Geboortedatum, CURRENT_TIMESTAMP()) 
+      BETWEEN IFNULL(Leeftijdsklasse.MinimumLeeftijd, 0) AND IFNULL(Leeftijdsklasse.MaximumLeeftijd, 200)
+LIMIT 10;
+
+-- 12.8
+SELECT WedstrijdID
+FROM UitslagTeam
+GROUP BY wedstrijdID
+HAVING sum(tijd) IS NULL;
+
+-- 12.11
+SELECT Lid.Voornaam, UitslagIndividueel.tijd, UitslagIndividueel.WedstrijdID, UitslagIndividueel.afstand
+FROM  UitslagIndividueel
+WHERE UitslagIndividueel.WedstrijdID IN (SELECT WedstrijdID FROM UitslagIndividueel WHERE UitslagIndividueel.LidID = 3)
+JOIN Lid ON UitslagIndividueel.LidID = Lid.LidID;
