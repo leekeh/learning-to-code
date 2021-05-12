@@ -1,0 +1,57 @@
+#header {
+  height: 75px;
+  background-color: aquamarine;
+  background: url("header.jpg") top center;
+  padding-left: 50px;
+  padding-top: 7px;
+  border-radius: 10px;
+}
+
+#sideBar {
+  width: 300px;
+  float: left;
+  min-height: 500px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 20px;
+  background-color: rgb(203, 235, 224);
+  border-radius: 10px;
+}
+
+#sideBar a {
+  text-decoration: none;
+  color: darkblue;
+}
+
+#sideBar a:hover {
+  color: rgb(103, 190, 161);
+}
+
+#textArea {
+  width: 600px;
+  float: left;
+  padding: 20px;
+}
+
+#footer {
+  height: 40px;
+  background-color: aquamarine;
+  padding: 5px;
+  text-align: center;
+  color: rgb(103, 190, 161);
+}
+
+.clear {
+  clear: both;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
