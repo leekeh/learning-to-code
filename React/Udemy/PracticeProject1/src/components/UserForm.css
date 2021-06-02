@@ -1,0 +1,29 @@
+.UserInput {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 150%;
+  color: rgb(69, 88, 83);
+}
+.Button {
+  background-color: #4ca8af; /* Green */
+  border-radius: 10px;
+  border: solid 1px rgb(117, 135, 136);
+  color: white;
+  margin-top: 20px;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  box-shadow: 2px 2px 4px #949494;
+}
+
+.Button:hover {
+  cursor: pointer;
+  background-color: #36787c;
+}
+
+.Button:active {
+  background-color: #22494b;
+}

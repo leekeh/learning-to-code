@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+  justify-content: center;
+}
+
+.Wrapper {
+  max-width: 800px;
+  border: solid 1px rgb(168, 153, 153);
+  background-color: white;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.Background {
+  background: rgb(102, 103, 109);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+
+.ListBox {
+  padding-left: 15px;
+  padding-right: 15px;
+}

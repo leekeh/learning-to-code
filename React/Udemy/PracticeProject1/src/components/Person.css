@@ -1,0 +1,7 @@
+.textField {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: solid 1px grey;
+  margin-left: 0px;
+  padding: 5px;
+  overflow: hidden;
+}
